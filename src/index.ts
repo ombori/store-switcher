@@ -1,5 +1,5 @@
 import redirect from './lib/redirect';
-import { typesOf } from './lib/utils';
+import { optionalTypesOf } from './lib/utils';
 import detectPlatform from './lib/detect-platform';
 import getQuery from './lib/get-query';
 import { generateAppleLink, generateAndroidLink } from './lib/generate-app-links';
@@ -8,7 +8,7 @@ const query = getQuery();
 const { apple_developerId, apple_appId, android_appId } = query;
 const supportedOS = new Set(['AndroidOS', 'iOS']);
 
-if (typesOf([apple_developerId, apple_appId, android_appId], 'string')) {
+if (optionalTypesOf([apple_developerId, apple_appId, android_appId], 'string')) {
   if (supportedOS.has(detectPlatform().os())) {
     redirect(window, window.navigator.userAgent, query);
   } else {
@@ -19,6 +19,9 @@ if (typesOf([apple_developerId, apple_appId, android_appId], 'string')) {
       developerId: apple_developerId,
       appId: apple_appId,
     });
+
+    appStoreButton && !appleLink && appStoreButton.remove();
+    androidStoreButton && !androidLink && androidStoreButton.remove();
 
     appStoreButton &&
       appStoreButton.addEventListener('click', () => {
