@@ -1,10 +1,12 @@
 import MobileDetect from 'mobile-detect';
 import queryString from 'query-string';
 import { generateAppleLink, generateAndroidLink } from './generate-app-links';
+import { StringRecord } from '../types';
 
 export default function redirect(
+  window: Window,
   userAgent: string,
-  query: queryString.ParsedQuery<string> | { [key: string]: string },
+  query: queryString.ParsedQuery<string> | StringRecord,
   supportedOS: Set<string>,
 ) {
   const md = new MobileDetect(userAgent);
@@ -13,9 +15,9 @@ export default function redirect(
       case 'iOS': {
         const { apple_developerId: developerId, apple_appId: appId } = query;
 
-        if (typeof developerId === 'string' && typeof appId === 'string')
+        if (typeof developerId === 'string' && typeof appId === 'string') {
           window.location.replace(generateAppleLink({ developerId, appId }));
-        else throw new Error('iOS Metadata values should be strings.');
+        } else throw new Error('iOS metadata values should be strings.');
 
         break;
       }
@@ -24,7 +26,7 @@ export default function redirect(
 
         if (typeof appId === 'string')
           window.location.replace(generateAndroidLink({ appId }));
-        else throw new Error('iOS Metadata values should be strings.');
+        else throw new Error('Android metadata values should be strings.');
 
         break;
       }
