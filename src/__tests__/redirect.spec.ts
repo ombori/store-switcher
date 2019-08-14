@@ -31,7 +31,7 @@ describe('switcher app successfully redirects users into their appropriate app s
         configurable: true,
         value: userAgent,
       });
-      redirect(window, userAgent, VALID_ANDROID_METADATA, SUPPORTED_OS);
+      redirect(window, userAgent, VALID_ANDROID_METADATA);
       expect(window.location.href).toBe(expectedUrl);
       expect(spy).toHaveBeenCalledWith(expectedUrl);
     });
@@ -53,7 +53,7 @@ describe('switcher app successfully redirects users into their appropriate app s
         configurable: true,
         value: userAgent,
       });
-      redirect(window, userAgent, VALID_APPLE_METADATA, SUPPORTED_OS);
+      redirect(window, userAgent, VALID_APPLE_METADATA);
       expect(window.location.href).toBe(expectedUrl);
       expect(spy).toHaveBeenCalledWith(expectedUrl);
     });
