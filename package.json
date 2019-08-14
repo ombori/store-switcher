@@ -1,0 +1,19 @@
+{
+  "name": "app-link-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "parcel public/index.html",
+    "build": "parcel build public/index.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "mobile-detect": "^1.4.3",
+    "query-string": "^6.8.2"
+  }
+}
