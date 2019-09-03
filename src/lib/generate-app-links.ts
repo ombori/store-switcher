@@ -5,5 +5,5 @@ export function generateAndroidLink({ appId = '' }: AndroidAppMetaData) {
 }
 
 export function generateAppleLink({ developerId = '', appId = '' }: AppleAppMetaData) {
-  return `https://apps.apple.com/app/${developerId}/${appId}`;
+  return `itms-apps://appstore.com/app/${developerId}/${appId}`;
 }
