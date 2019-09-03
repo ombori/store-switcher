@@ -24,9 +24,7 @@ describe('switcher app successfully redirects users into their appropriate app s
 
     android.userAgents.forEach((userAgent) => {
       const spy = jest.spyOn(window.location, 'replace');
-      const expectedUrl = `https://play.google.com/store/apps/details?id=${
-        VALID_ANDROID_METADATA.android_appId
-      }`;
+      const expectedUrl = `https://play.google.com/store/apps/details?id=${VALID_ANDROID_METADATA.android_appId}`;
       Object.defineProperty(window.navigator, 'userAgent', {
         configurable: true,
         value: userAgent,
@@ -45,9 +43,7 @@ describe('switcher app successfully redirects users into their appropriate app s
 
     apple.userAgents.forEach((userAgent) => {
       const spy = jest.spyOn(window.location, 'replace');
-      const expectedUrl = `https://apps.apple.com/app/${
-        VALID_APPLE_METADATA.apple_developerId
-      }/${VALID_APPLE_METADATA.apple_appId}`;
+      const expectedUrl = `itms-apps://appstore.com/app/${VALID_APPLE_METADATA.apple_developerId}/${VALID_APPLE_METADATA.apple_appId}`;
 
       Object.defineProperty(window.navigator, 'userAgent', {
         configurable: true,
