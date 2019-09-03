@@ -12,6 +12,7 @@ if (optionalTypesOf([apple_developerId, apple_appId, android_appId], 'string')) 
   if (supportedOS.has(detectPlatform().os())) {
     redirect(window, window.navigator.userAgent, query);
   } else {
+    const badges = window.document.querySelector('.badges');
     const appStoreButton = window.document.querySelector('.app-store');
     const androidStoreButton = window.document.querySelector('.play-store');
     const androidLink = generateAndroidLink({ appId: android_appId });
@@ -20,6 +21,7 @@ if (optionalTypesOf([apple_developerId, apple_appId, android_appId], 'string')) 
       appId: apple_appId,
     });
 
+    badges && badges.classList.remove('hidden');
     appStoreButton && !appleLink && appStoreButton.remove();
     androidStoreButton && !androidLink && androidStoreButton.remove();
 

@@ -29,10 +29,6 @@ export default function redirect(
       break;
     }
     default:
-      // Show badges at the DOM
-      const badges = document.querySelector('.badges');
-      badges && badges.classList.remove('hidden');
-
-      break;
+      console.log('Nothing to do with the supported OS as of this moment.');
   }
 }
