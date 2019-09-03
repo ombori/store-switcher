@@ -27,7 +27,6 @@ Required parameters when visiting example.com
 | `apple_developerId` | Apple Developer ID  | `uber` of <br /> `apps.apple.com/us/app/uber/id368677368`
 | `apple_appId`       | Apple App ID        | `id368677368` of <br /> `apps.apple.com/us/app/uber/id368677368`
 
-<br />
 A final link example would be: <br />
 `example.com/?android_appId=com.ubercab&apple_developerId=uber&apple_appId=id368677368`
 
