@@ -23,12 +23,13 @@ Required parameters when visiting example.com
 
 | Parameter           | Description         | Example
 | --------------------|---------------------|---------------
-| `android_appId`     | Android App ID      | `com.red.by.dufry` of <br /> `play.google.com/store/apps/details?id=com.red.by.dufry`
-| `apple_developerId` | Apple Developer ID  | `red-by-dufry` of <br /> `apps.apple.com/us/app/red-by-dufry/id1108485056`
-| `apple_appId`       | Apple App ID        | `id1108485056` of <br /> `apps.apple.com/us/app/red-by-dufry/id1108485056`
+| `android_appId`     | Android App ID      | `com.ubercab` of <br /> `play.google.com/store/apps/details?id=com.ubercab`
+| `apple_developerId` | Apple Developer ID  | `uber` of <br /> `apps.apple.com/us/app/uber/id368677368`
+| `apple_appId`       | Apple App ID        | `id368677368` of <br /> `apps.apple.com/us/app/uber/id368677368`
 
+<br />
 A final link example would be: <br />
-`example.com/?android_appId=com.red.by.dufry&apple_developerId=red-by-dufry&apple_appId=id1108485056`
+`example.com/?android_appId=com.ubercab&apple_developerId=uber&apple_appId=id368677368`
 
 ## Behavior
 If the device is part of the supported OS, Android/iOS, the static file redirects the user automatically to the appropriate app store, otherwise, a fallback page will be shown. This fallback page contains two badges: Play Store and App Store badges.
