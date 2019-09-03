@@ -28,5 +28,13 @@
   "dependencies": {
     "mobile-detect": "^1.4.3",
     "query-string": "^6.8.2"
-  }
+  },
+  "keywords": [
+    "switch",
+    "app store",
+    "play store",
+    "mobile",
+    "app",
+    "redirect"
+  ]
 }
