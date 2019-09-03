@@ -1,6 +1,6 @@
 {
   "name": "store-switcher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -8,6 +8,13 @@
     "build": "parcel build public/index.html",
     "test": "jest",
     "test:watch": "jest --watch"
+  },
+  "repository": {
+    "url": "https://github.com/ombori/store-switcher",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/ombori/store-switcher/issues"
   },
   "devDependencies": {
     "@types/jest": "^24.0.17",
